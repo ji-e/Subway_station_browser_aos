@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="rootView"
+            type="com.jieun.subwaystationbrowser.view.dialog.DefaultBottomSheetDialog" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_rectangle_r16top_f_white"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/dimen_16dp">
+
+            <ImageView
+                android:id="@+id/default_bottom_sheet_dialog_img_close"
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:padding="@dimen/dimen_10dp"
+                android:src="@drawable/btn_close_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/default_bottom_sheet_dialog_tv_title"
+                style="@style/Font_20_black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_30dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/default_bottom_sheet_dialog_img_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/default_bottom_sheet_dialog_img_close"
+                app:layout_constraintTop_toTopOf="@id/default_bottom_sheet_dialog_img_close"
+                tools:text="dialog_title" />
+
+            <TextView
+                android:id="@+id/default_bottom_sheet_dialog_tv_content"
+                style="@style/Font_16_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="@dimen/dimen_100dp"
+                android:padding="@dimen/dimen_16dp"
+                app:layout_constraintTop_toBottomOf="@id/default_bottom_sheet_dialog_tv_title"
+                tools:text="dialog_content" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/default_bottom_sheet_dialog_btn_cancel"
+                style="@style/Btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_05dp"
+                android:text="@string/btn_cancel"
+                app:layout_constraintEnd_toStartOf="@id/default_bottom_sheet_dialog_btn_confirm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/default_bottom_sheet_dialog_tv_content" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/default_bottom_sheet_dialog_btn_confirm"
+                style="@style/Btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dimen_05dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:text="@string/btn_confirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/default_bottom_sheet_dialog_btn_cancel"
+                app:layout_constraintTop_toBottomOf="@id/default_bottom_sheet_dialog_tv_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

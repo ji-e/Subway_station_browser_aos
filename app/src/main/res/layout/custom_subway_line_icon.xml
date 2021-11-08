@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dimen_24dp"
+    android:paddingEnd="@dimen/dimen_05dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/subway_line_lt"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/gray_b5b5b5"
+        app:cardCornerRadius="@dimen/dimen_30dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/subway_line_tv"
+            style="@style/Font_12_gray_666666"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_01dp"
+            android:background="@drawable/shape_rectangle_r30_f_ffffff"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dimen_08dp"
+            tools:text="1" />
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

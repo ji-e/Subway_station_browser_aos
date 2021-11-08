@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Btn_cancel" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/Font_16_black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/shape_rectangle_r30_s_000000</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Btn_confirm" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/Font_16_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/shape_rectangle_r30_f_000000</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+
+    <style name="Default_bottom_sheet_dialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
+    </style>
+
+    <style name="Font_12_gray_666666">
+        <item name="android:textSize">@dimen/dimen_12dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+    </style>
+
+    <style name="Font_14_gray_black">
+        <item name="android:textSize">@dimen/dimen_14dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Font_14_gray_666666">
+        <item name="android:textSize">@dimen/dimen_14dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+    </style>
+
+    <style name="Font_16_black">
+        <item name="android:textSize">@dimen/dimen_16dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Font_16_gray_666666">
+        <item name="android:textSize">@dimen/dimen_16dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+    </style>
+
+    <style name="Font_16_gray_b5b5b5">
+        <item name="android:textSize">@dimen/dimen_16dp</item>
+        <item name="android:textColor">@color/gray_b5b5b5</item>
+    </style>
+
+
+    <style name="Font_16_white">
+        <item name="android:textSize">@dimen/dimen_16dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Font_20_black">
+        <item name="android:textSize">@dimen/dimen_20dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+</resources>

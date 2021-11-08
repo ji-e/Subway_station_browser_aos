@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchSubwayStationVm"
+            type="com.jieun.subwaystationbrowser.viewmodel.SearchSubwayStationViewModel" />
+
+        <variable
+            name="rootView"
+            type="com.jieun.subwaystationbrowser.view.searchsubwaystation.SearchSubwayStationResultFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/search_subway_station_result_img_close"
+            android:layout_width="@dimen/dimen_45dp"
+            android:layout_height="@dimen/dimen_45dp"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:src="@drawable/btn_close_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onSafeClick="@{rootView::onClickSearchSubwayStationResultFragment}" />
+
+        <com.jieun.subwaystationbrowser.view.custom.CustomEdit
+            android:id="@+id/search_subway_station_result_edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:maxLength="1"
+            app:hint="@string/search_subway_station_hint"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_result_img_close" />
+
+        <View
+            android:id="@+id/search_subway_station_result_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_01dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/gray_b5b5b5"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_result_edt_search" />
+
+        <TextView
+            android:id="@+id/search_subway_station_result_tv_empty"
+            style="@style/Font_20_black"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/search_subway_station_empty"
+            android:visibility="@{searchSubwayStationVm.liveSubwayStationList.empty?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_result_line" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_subway_station_result_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="@{searchSubwayStationVm.liveSubwayStationList.empty?View.GONE:View.VISIBLE}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_result_line"
+            app:searchSubwayStationResultListAdapter="@{searchSubwayStationVm.liveSubwayStationList}"
+            tools:listitem="@layout/item_search_subway_station_result" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

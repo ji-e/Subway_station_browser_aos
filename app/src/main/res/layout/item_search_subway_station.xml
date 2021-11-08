@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchSubwayStationItem"
+            type="com.jieun.subwaystationbrowser.model.room.SearchRecentItem" />
+
+
+        <variable
+            name="searchSubwayStationVm"
+            type="com.jieun.subwaystationbrowser.viewmodel.SearchSubwayStationViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:background="@drawable/shape_rectangle_r30_s_b5b5b5"
+        android:paddingHorizontal="@dimen/dimen_05dp">
+
+        <LinearLayout
+            android:id="@+id/item_search_subway_station_lt_line"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_search_subway_station_tv_name"
+            style="@style/Font_16_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dimen_05dp"
+            android:text="@{searchSubwayStationItem.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_search_subway_station_lt_line"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="사당" />
+
+        <ImageView
+            android:id="@+id/item_search_subway_station_img_close"
+            android:layout_width="@dimen/dimen_24dp"
+            android:layout_height="@dimen/dimen_24dp"
+            android:src="@drawable/btn_close_black"
+            app:layout_constraintStart_toEndOf="@id/item_search_subway_station_tv_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:onSafeClick="@{() -> searchSubwayStationVm.deleteRecentSubwayStation(searchSubwayStationItem.idx)}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">지하철 역 검색</string>
+
+    <string name="alarm">알림</string>
+    <string name="search_edt_hint">검색어를 입력해주세요.</string>
+    <string name="search_empty">검색 결과가 없습니다.</string>
+
+    <string name="btn_cancel">취소</string>
+    <string name="btn_confirm">확인</string>
+    <string name="btn_all_delete">전체삭제</string>
+
+    <string name="search_subway_station_hint">돌봄을 하고 싶은 지하철역을 검색해보세요.</string>
+    <string name="search_subway_station_empty">검색 결과가 없습니다.</string>
+    <string name="search_subway_station_dialog_delete_all">전체삭제 하시겠습니까?</string>
+
+
+
+</resources>

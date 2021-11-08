@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchSubwayStationVm"
+            type="com.jieun.subwaystationbrowser.viewmodel.SearchSubwayStationViewModel" />
+
+        <variable
+            name="rootView"
+            type="com.jieun.subwaystationbrowser.view.searchsubwaystation.SearchSubwayStationFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/search_subway_station_tv_search"
+            style="@style/Font_16_gray_b5b5b5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_45dp"
+            android:layout_marginHorizontal="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/edt_background_selector"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:text="@string/search_subway_station_hint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onSafeClick="@{rootView::onClickSearchSubwayStationFragment}" />
+
+        <TextView
+            android:id="@+id/search_subway_station_tv_all_delete"
+            style="@style/Font_14_gray_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dimen_20dp"
+            android:paddingVertical="@dimen/dimen_10dp"
+            android:text="@string/btn_all_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_tv_search"
+            app:onSafeClick="@{rootView::onClickSearchSubwayStationFragment}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_subway_station_result_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_subway_station_tv_all_delete"
+            app:searchSubwayStationListAdapter="@{searchSubwayStationVm.liveRecentSubwayStationList}"
+            tools:listitem="@layout/item_search_subway_station" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
